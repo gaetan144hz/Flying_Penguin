@@ -1,20 +1,46 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SC_Breakable_Banquise : MonoBehaviour
 {
-    public int breakable;
+    private SC_Score _score;
+    public int breakableScore;
+    public bool canBreak;
     public TextMeshProUGUI textBreaker;
+    [SerializeField] private float lerpTime;
         
     void Start()
     {
-        textBreaker.text = breakable.ToString();
+        lerpTime = 1.5f;
+        canBreak = false;
+        _score = FindObjectOfType<SC_Score>();
+        textBreaker.text = breakableScore.ToString();
     }
 
     void Update()
     {
-        
+        if (_score.score == breakableScore)
+        {
+            canBreak = true;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.CompareTag("Penguin") && canBreak == true)
+        {
+            Debug.Log("plouf");
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            col.gameObject.transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0,0,90), lerpTime);
+            Debug.Log("t mort ta pas assez de score nullos");
+        }
     }
 }
