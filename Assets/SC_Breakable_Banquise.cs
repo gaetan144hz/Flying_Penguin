@@ -34,13 +34,20 @@ public class SC_Breakable_Banquise : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Penguin") && canBreak == true)
         {
+            _score.score += breakableScore;
             Debug.Log("plouf");
             Destroy(this.gameObject);
         }
         else
         {
-            col.gameObject.transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0,0,90), lerpTime);
             Debug.Log("t mort ta pas assez de score nullos");
+            //onLerp(col.gameObject);
         }
+    }
+
+    public void onLerp(GameObject lerpObject)
+    {
+        lerpObject.gameObject.transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0,0,90), lerpTime);
+        Debug.Log("t mort ta pas assez de score nullos");
     }
 }

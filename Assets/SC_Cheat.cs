@@ -10,7 +10,7 @@ public class SC_Cheat : MonoBehaviour
     [SerializeField] private float lerpTime;
     [SerializeField] private bool lerpBool;
     [SerializeField] private float time;
-    
+
     void Start()
     {
         lerpBool = false;
@@ -19,37 +19,32 @@ public class SC_Cheat : MonoBehaviour
 
     void Update()
     {
-        if (lerpBool == true)
-        {
-            OnLerp();
-        }
-        else
-        {
+        if (!lerpBool)
             return;
-        }
+        OnLerp();
     }
     
-    public void OnAddScore(InputValue value)
+    public void OnAddScore(InputAction.CallbackContext ctx)
     {
-        if (value.isPressed)
+        if (ctx.performed)
         {
             _score.score += 100;
             Debug.Log("Score +100");
         }
     }
 
-    public void OnRemoveScore(InputValue value)
+    public void OnRemoveScore(InputAction.CallbackContext ctx)
     {
-        if (value.isPressed)
+        if (ctx.performed)
         {
             _score.score -= 100;
             Debug.Log("Score -100");
         }
     }
 
-    public void OnGOD(InputValue value)
+    public void OnGOD(InputAction.CallbackContext ctx)
     {
-        if (value.isPressed)
+        if (ctx.performed)
         {
             _score.score = 9999999;
             Debug.Log("Score set 9999999");
@@ -62,12 +57,11 @@ public class SC_Cheat : MonoBehaviour
         time += Time.deltaTime / lerpTime;
     }
 
-    public void OnLerpTest(InputValue value)
+    public void OnLerpTest(InputAction.CallbackContext ctx)
     {
-        if (value.isPressed)
-        {
-            lerpBool = true;
-            Debug.Log("Lerp !");
-        }
+        if (!ctx.performed)
+            return;
+        lerpBool = true;
+        Debug.Log("Lerp !");
     }
 }

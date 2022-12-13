@@ -19,16 +19,8 @@ public class DeathZone : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.CompareTag("Penguin"))
-        {
-            OnLerp(col.gameObject);
-            Debug.Log("t mort");
-        }
-    }
-    
-    public void OnLerp(GameObject lerpObject)
-    {
-        lerpObject.transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0,0,90), time);
-        time += Time.deltaTime / lerpTime;
+        if (!col.gameObject.CompareTag("Penguin"))
+            return;
+        Debug.Log("t mort");
     }
 }
