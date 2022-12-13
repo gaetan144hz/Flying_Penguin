@@ -24,10 +24,12 @@ public class SC_Breakable_Banquise : MonoBehaviour
 
     void Update()
     {
+        
         if (_score.score == breakableScore)
         {
             canBreak = true;
         }
+        
     }
 
     private void OnCollisionEnter2D(Collision2D col)
