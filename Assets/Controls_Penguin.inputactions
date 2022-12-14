@@ -7,12 +7,12 @@
             "actions": [
                 {
                     "name": "Rotate",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "42fcad9b-e873-47ef-b6a7-0921ddb931d0",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -21,7 +21,7 @@
                     "id": "1b0ac2d8-ef36-4a9b-8f14-b77da8e31511",
                     "path": "1DAxis",
                     "interactions": "",
-                    "processors": "",
+                    "processors": "Invert",
                     "groups": "",
                     "action": "Rotate",
                     "isComposite": true,
