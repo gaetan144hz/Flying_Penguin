@@ -8,7 +8,7 @@ public class SC_Cheat : MonoBehaviour
 {
     private SC_Score _score;
     [SerializeField] private float lerpTime;
-    [SerializeField] private bool lerpBool;
+    public bool lerpBool;
     [SerializeField] private float time;
 
     void Start()

@@ -10,6 +10,8 @@ public class SC_MoveTest : MonoBehaviour
     public bool canRotate;
     [SerializeField] private float revSpeed;
     private float _inputValue;
+    [SerializeField] private float raycastMaxDistance;
+    [SerializeField] private LayerMask _layerMask;
 
     void Start()
     {
@@ -22,6 +24,19 @@ public class SC_MoveTest : MonoBehaviour
         ManageRotation();
     }
 
+    void Update()
+    {
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.up, raycastMaxDistance, _layerMask);
+        
+        Debug.DrawRay(transform.position, transform.up * raycastMaxDistance, Color.magenta);
+
+        if (hit.collider != null)
+        {
+            Debug.Log("touché !", hit.collider.gameObject);
+            Destroy(hit.collider.gameObject);
+        }
+    }
+    
     private void ManageRotation()
     {
         if (!canRotate)
@@ -29,14 +44,9 @@ public class SC_MoveTest : MonoBehaviour
         rb.MoveRotation(rb.rotation + revSpeed * Time.fixedDeltaTime * _inputValue);
     }
 
-    void Update()
-    {
-
-    }
-
     public void OnMove(InputAction.CallbackContext ctx)
     {
         _inputValue = ctx.ReadValue<float>();
-        canRotate = ctx.performed;
+        canRotate = ctx.performed; //si appui sur touche il peut rotate
     }
 }

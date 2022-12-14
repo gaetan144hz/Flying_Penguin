@@ -5,16 +5,16 @@ TagManager:
   serializedVersion: 2
   tags:
   - Penguin
-  - PenguinHead
+  - Banquise
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - NoCollision
   - Water
   - UI
-  - 
-  - 
+  - Player
+  - Banquise
   - 
   - 
   - 
