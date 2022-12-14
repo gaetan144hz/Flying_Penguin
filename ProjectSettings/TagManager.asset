@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ramp
+  tags:
+  - ignore raycast
   layers:
   - Default
   - TransparentFX
