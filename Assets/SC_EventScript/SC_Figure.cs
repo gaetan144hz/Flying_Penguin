@@ -6,84 +6,70 @@ using UnityEngine.Events;
 
 public class SC_Figure : MonoBehaviour
 {
-    private SC_Score sc;
     //public UnityEvent onRotationComplete;
-    public bool deg90;
-    public bool deg180;
-    public bool deg270;
-    public bool deg360;
     private Rigidbody2D rb;
-    [SerializeField] private float rest;
+
+    private List<int> passAngles;
+    private int lastAngleIndex = 1;
 
     void Start()
     {
-        OnStartDeg();
-        
+        passAngles = new List<int>(5);
+        passAngles[0] = 0;
+
         rb = GetComponent<Rigidbody2D>();
-        sc = GetComponent<SC_Score>();
+        //sc = GetComponent<SC_Score>();
     }
 
     private void FixedUpdate()
     {
-        if (Mathf.Abs(rb.rotation) >= 90)
+        if (rb.rotation < 0)
         {
-            deg90 = true;
-            sc.score += 90;
+            rb.rotation = 360 + rb.rotation;
         }
 
-        if (Mathf.Abs(rb.rotation) >= 180)
+        rb.rotation %= 360;
+            
+        switch (rb.rotation)
         {
-            deg180 = true;
-            sc.score += 180;
+            case >= 80 and <= 100:
+                UpdateQueue(90);
+                break;
+            case >= 170 and <= 190:
+                UpdateQueue(180);
+                break;
+            case >= 260 and <= 280:
+                UpdateQueue(270);
+                break;
+            case >= 350:
+                UpdateQueue(360);
+                break;
         }
-        
-        if (Mathf.Abs(rb.rotation) >= 270)
-        {
-            deg270 = true;
-            sc.score += 270;
-        }
-        
-        if (Mathf.Abs(rb.rotation) >= 350)
-        {
-            sc.score += 360;
+    }
 
-            var lastRota = Mathf.Abs(rb.rotation);
-            rest = lastRota %= 360;
-            rb.rotation = rest;
-            
-            deg360 = true;
-            
-            deg90 = false;
-            deg180 = false;
-            deg270 = false;
-            deg360 = false;
+    void UpdateQueue(int checkpoint)
+    {
+        // si different alors on l'ajoute à la queue
+        if (checkpoint == passAngles[lastAngleIndex - 1]) // si l'angle passez est deja le derniere angle enregistré
+            return;
+        
+        // a l'index lastCheckpoint index 
+        passAngles[lastAngleIndex] = checkpoint;
+        
+        lastAngleIndex++;
+        
+        if (lastAngleIndex == 5)
+        {
+            foreach (var listDangle in passAngles)
+            {
+                
+            }
+
         }
     }
 
     void Update()
     {
-        if (!deg90)
-            return;
-        Debug.Log("90");
-        
-        if (!deg180)
-            return;
-        Debug.Log("180");
-        
-        if (!deg270)
-            return;
-        Debug.Log("270");
-        
-        if (!deg360)
-            return;
-        Debug.Log("360");
-    }
 
-    public void OnStartDeg()
-    {
-        deg90 = false;
-        deg180 = false;
-        deg270 = false;
-        deg360 = false;
     }
 }
