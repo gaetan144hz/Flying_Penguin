@@ -5,11 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ramp
-  tags:
-  - ignore raycast
-  tags:
-  - Penguin
   - Banquise
+  - ignore raycast
+  - Penguin
+  - SpawnBanquise
   layers:
   - Default
   - TransparentFX
