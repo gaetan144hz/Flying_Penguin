@@ -65,8 +65,8 @@ GameObject:
   - component: {fileID: 4906727957547970622}
   - component: {fileID: 4906727957547970595}
   - component: {fileID: 4906727957547970621}
-  - component: {fileID: 4906727957547970618}
   - component: {fileID: 5140856079485242741}
+  - component: {fileID: 4906727957547970618}
   m_Layer: 6
   m_Name: Penguin
   m_TagString: Penguin
@@ -161,7 +161,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0.2
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: e4573d29112774145a31dc5a40884550, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
@@ -255,6 +255,19 @@ MonoBehaviour:
   _layerMask:
     serializedVersion: 2
     m_Bits: 128
+--- !u!114 &5140856079485242741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4906727957547970609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5987e9510da5bb144be500f52d28d86c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fx: {fileID: 1637226734226591666, guid: 311272736cb46064bae44284109c2790, type: 3}
 --- !u!114 &4906727957547970618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -381,19 +394,6 @@ MonoBehaviour:
   m_DefaultActionMap: penguin
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &5140856079485242741
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4906727957547970609}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5987e9510da5bb144be500f52d28d86c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fx: {fileID: 1637226734226591666, guid: 311272736cb46064bae44284109c2790, type: 3}
 --- !u!1 &4906727957901766325
 GameObject:
   m_ObjectHideFlags: 0

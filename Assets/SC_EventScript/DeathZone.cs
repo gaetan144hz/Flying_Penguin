@@ -4,9 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DeathZone : MonoBehaviour
-{    
-    [SerializeField] private float lerpTime;
-    [SerializeField] private float time;
+{
     void Start()
     {
 
@@ -17,10 +15,10 @@ public class DeathZone : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter2D(Collision2D col)
+    private void OnTriggerEnter2D(Collider2D col)
     {
         if (!col.gameObject.CompareTag("Penguin"))
             return;
-        Debug.Log("t mort");
+        Destroy(col.gameObject);
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class SC_Penguin_Behaviour : MonoBehaviour
 {
-    private new Rigidbody2D rb2D;
+    private Rigidbody2D rb2D;
     [SerializeField] private float LaunchForce;
     
 
