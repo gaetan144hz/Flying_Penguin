@@ -582,7 +582,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   multiplierUp: 7
-  multiplierRight: 1
+  multiplierRight: 0.1
 --- !u!61 &7965841760394868911
 BoxCollider2D:
   m_ObjectHideFlags: 0
