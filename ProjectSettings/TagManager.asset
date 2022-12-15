@@ -5,10 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ramp
-  - Banquise
   - ignore raycast
   - Penguin
   - SpawnBanquise
+  - Banquise
+  - Water
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - UI
   - Player
   - Banquise
-  - 
+  - Post Processing
   - 
   - 
   - 
