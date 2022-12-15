@@ -7,15 +7,18 @@ TagManager:
   - Ramp
   tags:
   - ignore raycast
+  tags:
+  - Penguin
+  - Banquise
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - NoCollision
   - Water
   - UI
-  - 
-  - 
+  - Player
+  - Banquise
   - 
   - 
   - 
