@@ -11,6 +11,10 @@ public class SC_Figure : MonoBehaviour
 
     private List<int> passAngles;
     private int lastAngleIndex = 1;
+    
+    [SerializeField] private float oldrot;
+    [SerializeField] private float oldDelta;
+    private SC_Score sc;
 
     void Start()
     {
@@ -18,11 +22,55 @@ public class SC_Figure : MonoBehaviour
         passAngles[0] = 0;
 
         rb = GetComponent<Rigidbody2D>();
-        //sc = GetComponent<SC_Score>();
+        sc = GetComponent<SC_Score>();
+    }
+    
+    void Update()
+    {
+
     }
 
     private void FixedUpdate()
     {
+        /*
+        float delta = rb.rotation - oldrot;
+        
+        if(delta < 0 && oldDelta < 0)
+        {
+            rb.rotation = 360 + rb.rotation;
+        }
+        else if(delta >0 && oldDelta >0)
+        {
+            rb.rotation = 360 - rb.rotation;
+        }
+        else
+        {
+            // On a changé de sens
+        }
+        
+        rb.rotation %= 360;
+        
+        if(oldrot != rb.rotation)
+        {
+            if (oldrot < 90 && rb.rotation >= 90)
+            {
+                sc.score = 90;
+            }
+            if (oldrot < 180 && rb.rotation >= 180)
+            {
+                sc.score = 180;
+            }
+            if (oldrot < 90 && rb.rotation >= 90)
+            {
+                sc.score = 270;
+            }
+            if (oldrot < 359.90 && rb.rotation >= 0)
+            {
+                sc.score = 360;
+            }
+        }
+        */
+        
         if (rb.rotation < 0)
         {
             rb.rotation = 360 + rb.rotation;
@@ -47,6 +95,7 @@ public class SC_Figure : MonoBehaviour
         }
     }
 
+    
     void UpdateQueue(int checkpoint)
     {
         // si different alors on l'ajoute à la queue
@@ -60,16 +109,26 @@ public class SC_Figure : MonoBehaviour
         
         if (lastAngleIndex == 5)
         {
-            foreach (var listDangle in passAngles)
+            sc.score += 100;
+            /*
+            if (passAngles[1] == 90)
             {
-                
+                sc.score += 90;
             }
-
+            if (passAngles[1] == 180)
+            {
+                sc.score += 180;
+            }
+            if (passAngles[1] == 270)
+            {
+                sc.score += 270;
+            }
+            if (passAngles[1] == 360)
+            {
+                sc.score += 360;
+            }
+            */
         }
     }
-
-    void Update()
-    {
-
-    }
+    
 }
