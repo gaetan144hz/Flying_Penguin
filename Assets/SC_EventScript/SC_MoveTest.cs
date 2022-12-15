@@ -13,9 +13,11 @@ public class SC_MoveTest : MonoBehaviour
     public bool canRotate;
     [SerializeField] private float revSpeed;
     private float _inputValue;
+    [SerializeField] private GameObject gameover;
 
     void Start()
     {
+        gameover.SetActive(false);
         canRotate = false;
         rb = this.GetComponent<Rigidbody2D>();
     }
@@ -41,5 +43,10 @@ public class SC_MoveTest : MonoBehaviour
     {
         _inputValue = ctx.ReadValue<float>();
         canRotate = ctx.performed; //si appui sur touche il peut rotate
+    }
+
+    private void OnDestroy()
+    {
+        gameover.SetActive(true);
     }
 }
