@@ -6,17 +6,18 @@ public class SC_BanquiseSpawn : MonoBehaviour
 {
     
     [SerializeField] private GameObject parent;
-    [SerializeField] private GameObject transformRef;
+    [SerializeField] private GameObject spawnTransformRef;
+    [SerializeField] private GameObject spawnTransformTrig;
     [SerializeField] private GameObject prefabToSpawn;
     private Vector3 spawnPosition;
-    private float length;
+    [SerializeField] private float length;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        spawnPosition = transformRef.transform.position;
-        length = parent.GetComponent<SpriteRenderer>().bounds.size.x;
+        spawnPosition = parent.transform.position;
+        //length = spawnTransformRef.transform.position.x - spawnTransformTrig.transform.position.x;
     }
 
     // Update is called once per frame
