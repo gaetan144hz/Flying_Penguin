@@ -17,13 +17,13 @@ public class SceneChange : MonoBehaviour
     {
         var prefab = Instantiate(loadingScreenPrefab);
         DontDestroyOnLoad(prefab);
-        var sceneLoading = SceneManager.LoadSceneAsync("TestPlay"); // permet de charger la scène en décaler
-        sceneLoading.allowSceneActivation = false; // bloque l'affichage de la scène suivante.
+        var sceneLoading = SceneManager.LoadSceneAsync("Event"); // permet de charger la scï¿½ne en dï¿½caler
+        sceneLoading.allowSceneActivation = false; // bloque l'affichage de la scï¿½ne suivante.
         while (sceneLoading.isDone == false)
         {
-            if (sceneLoading.progress >= 0.9f) //chargement dans unity est à 90% le rest c'est l'affichage sur le screen
+            if (sceneLoading.progress >= 0.9f) //chargement dans unity est ï¿½ 90% le rest c'est l'affichage sur le screen
             {
-                sceneLoading.allowSceneActivation = true; //réautorise l'affichage de la scène game.
+                sceneLoading.allowSceneActivation = true; //rï¿½autorise l'affichage de la scï¿½ne game.
                 prefab.SetActive(false);
             }
             yield return new WaitForSeconds(1);

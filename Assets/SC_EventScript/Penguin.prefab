@@ -24,14 +24,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4906727957324411754}
-  m_LocalRotation: {x: 0, y: 0, z: -0.258819, w: 0.9659259}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0.22196594, w: 0.9750545}
+  m_LocalPosition: {x: 0.35, y: 0.38000032, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4906727957547970613}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -30}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -25.649}
 --- !u!114 &4906727957324411752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67,6 +67,7 @@ GameObject:
   - component: {fileID: 4906727957547970621}
   - component: {fileID: 5140856079485242741}
   - component: {fileID: 4906727957547970618}
+  - component: {fileID: 6233916683694661125}
   m_Layer: 6
   m_Name: Penguin
   m_TagString: Penguin
@@ -83,7 +84,7 @@ Transform:
   m_GameObject: {fileID: 4906727957547970609}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.65, y: 5.91, z: 0}
-  m_LocalScale: {x: 0.46967, y: 0.53424966, z: 0.46967}
+  m_LocalScale: {x: 0.54922, y: 0.54922, z: 0.54922}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4906727958576541642}
@@ -133,8 +134,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
-  m_Color: {r: 0.22806162, g: 0.23584908, b: 0.23569006, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 856c8907b7114e54681ec3762b4dc74d, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -178,8 +179,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1.0000001, y: 2.0000002}
+  m_Offset: {x: 0.12571466, y: 0.08378064}
+  m_Size: {x: 0.74857867, y: 2.1675622}
   m_Direction: 0
 --- !u!114 &4906727957547970617
 MonoBehaviour:
@@ -210,6 +211,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canRotate: 0
   revSpeed: 200
+  gameover: {fileID: 0}
 --- !u!114 &4906727957547970622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,7 +252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05822d6e9e1ddee499a67e014010e28d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  raycastMaxDistance1: 0.7
+  raycastMaxDistance1: 1
   _layerMask:
     serializedVersion: 2
     m_Bits: 128
@@ -393,8 +395,8 @@ MonoBehaviour:
   m_DefaultActionMap: penguin
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!1 &4906727957901766325
-GameObject:
+--- !u!114 &6233916683694661125
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -410,19 +412,6 @@ GameObject:
   spawnTransformTrig: {fileID: 0}
   prefabToSpawn: {fileID: 4159197157359059861, guid: 0ca52f5bd5731f544965153c4fc8f649, type: 3}
   length: 51
---- !u!114 &970444467
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4906727957547970609}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f1d3958b32f006429bf1fea86086269, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LaunchForce: 2
 --- !u!1 &4906727958576541643
 GameObject:
   m_ObjectHideFlags: 0
@@ -447,14 +436,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4906727958576541643}
-  m_LocalRotation: {x: 0, y: 0, z: 0.2588191, w: 0.9659258}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 0.17111525, w: 0.98525107}
+  m_LocalPosition: {x: 0.010998933, y: 0.5890036, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4906727957547970613}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 30}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 19.705}
 --- !u!114 &4906727958576541641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -496,7 +485,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6609735470704192097}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.969, z: 0}
+  m_LocalPosition: {x: -0.08, y: -0.88, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
