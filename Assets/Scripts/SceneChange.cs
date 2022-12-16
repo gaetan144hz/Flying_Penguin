@@ -17,7 +17,7 @@ public class SceneChange : MonoBehaviour
     {
         var prefab = Instantiate(loadingScreenPrefab);
         DontDestroyOnLoad(prefab);
-        var sceneLoading = SceneManager.LoadSceneAsync("Game_Scene"); // permet de charger la scène en décaler
+        var sceneLoading = SceneManager.LoadSceneAsync("TestPlay"); // permet de charger la scène en décaler
         sceneLoading.allowSceneActivation = false; // bloque l'affichage de la scène suivante.
         while (sceneLoading.isDone == false)
         {
