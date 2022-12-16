@@ -12,13 +12,10 @@ GameObject:
   - component: {fileID: 4100211087277350528}
   - component: {fileID: 4100211087277350534}
   - component: {fileID: 4100211087277350530}
-  - component: {fileID: 4100211087277350541}
   - component: {fileID: 4100211087277350543}
   - component: {fileID: 4100211087277350542}
   - component: {fileID: 4100211087277350540}
-  - component: {fileID: 4100211087277350537}
   - component: {fileID: 1077771888}
-  - component: {fileID: 4605784920941511400}
   m_Layer: 6
   m_Name: Penguin
   m_TagString: Penguin
@@ -131,20 +128,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1.0000001, y: 2.0000002}
   m_Direction: 0
---- !u!114 &4100211087277350541
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4100211087277350535}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75c16af55802dfc47afb04dfdcd9e07c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  score: 400
-  scoreText: {fileID: 0}
 --- !u!114 &4100211087277350543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,10 +157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canRotate: 0
   revSpeed: 200
-  raycastMaxDistance: 0.7
-  _layerMask:
-    serializedVersion: 2
-    m_Bits: 128
+  gameover: {fileID: 0}
 --- !u!114 &4100211087277350540
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -304,18 +284,6 @@ MonoBehaviour:
   m_DefaultActionMap: penguin
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &4100211087277350537
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4100211087277350535}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2abaa8bd1419cbd40897c9be8224f740, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1077771888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -329,18 +297,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LaunchForce: 0.1
---- !u!114 &4605784920941511400
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4100211087277350535}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ea505adfc672844da8a8fb3e4542803, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &4100211087698378755
 GameObject:
   m_ObjectHideFlags: 0

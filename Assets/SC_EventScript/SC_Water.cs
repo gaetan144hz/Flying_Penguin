@@ -35,7 +35,6 @@ public class SC_Water : MonoBehaviour
         var tr = col.transform;
         Vector3 forceUp = tr.up * multiplierUp;
         Vector3 forceRight = tr.right * multiplierRight;
-        Vector3 forceLeft = -tr.right * multiplierLeft;
         col.GetComponent<Rigidbody2D>().AddForce(forceUp);
         col.GetComponent<Rigidbody2D>().AddForce(forceRight);
     }
