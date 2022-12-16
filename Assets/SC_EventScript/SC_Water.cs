@@ -8,8 +8,9 @@ using Object = UnityEngine.Object;
 
 public class SC_Water : MonoBehaviour
 {
-    [SerializeField] float multiplierUp;
-    [SerializeField] float multiplierRight;
+    [SerializeField] private float multiplierUp;
+    [SerializeField] private float multiplierRight;
+    [SerializeField] private float multiplierLeft;
 
     void Start()
     {
@@ -31,8 +32,10 @@ public class SC_Water : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D col)
     {
-        Vector3 forceUp = col.transform.up * multiplierUp;
-        Vector3 forceRight = col.transform.right * multiplierRight;
+        var tr = col.transform;
+        Vector3 forceUp = tr.up * multiplierUp;
+        Vector3 forceRight = tr.right * multiplierRight;
+        Vector3 forceLeft = -tr.right * multiplierLeft;
         col.GetComponent<Rigidbody2D>().AddForce(forceUp);
         col.GetComponent<Rigidbody2D>().AddForce(forceRight);
     }

@@ -10,6 +10,7 @@ TagManager:
   - SpawnBanquise
   - Banquise
   - Water
+  - DeathZone
   layers:
   - Default
   - TransparentFX

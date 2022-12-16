@@ -42,7 +42,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1637226734226591666}
   serializedVersion: 8
-  lengthInSec: 2
+  lengthInSec: 1.73
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -117,7 +117,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.7
+      scalar: 1
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -170,7 +170,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 32
+      scalar: 2
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -286,8 +286,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.6
-      minScalar: 0.25
+      scalar: 1.47
+      minScalar: 2.8
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -662,11 +662,11 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 6
     enabled: 1
-    type: 4
-    angle: 17.1
+    type: 2
+    angle: 5
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
-    radiusThickness: 1
+    radiusThickness: 0.33
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
@@ -749,7 +749,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.5
+      value: 8.39
       mode: 0
       spread: 0
       speed:
@@ -806,7 +806,7 @@ ParticleSystem:
           m_PostInfinity: 2
           m_RotationOrder: 4
     arc:
-      value: 360
+      value: 180
       mode: 0
       spread: 0
       speed:
@@ -1364,15 +1364,15 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.13550198, g: 0.33384165, b: 0.990566, a: 1}
-        key1: {r: 0.3443396, g: 0.8131069, b: 1, a: 1}
+        key0: {r: 0.13725492, g: 0.5441266, b: 0.99215686, a: 1}
+        key1: {r: 1, g: 1, b: 1, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
-        ctime0: 0
+        ctime0: 36430
         ctime1: 65535
         ctime2: 0
         ctime3: 0
@@ -4883,4 +4883,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5575eb4e32b15649887a42baf6091d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToDestroy: 10
+  timeToDestroy: 0.8
