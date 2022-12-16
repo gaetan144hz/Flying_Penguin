@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class SC_Penguin_Behaviour : MonoBehaviour
 {
-    private new Rigidbody2D rb2D;
+    private Rigidbody2D rb2D;
     [SerializeField] private float LaunchForce;
     
 
@@ -21,7 +21,7 @@ public class SC_Penguin_Behaviour : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Ramp"))
         {
-            rb2D.AddForce(transform.up * LaunchForce, ForceMode2D.Impulse);
+            rb2D.AddForce(transform.up * LaunchForce, ForceMode2D.Force);
 
         }
 

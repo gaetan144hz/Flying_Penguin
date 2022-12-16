@@ -10,7 +10,7 @@ public class SC_Figure : MonoBehaviour
     private Rigidbody2D rb;
 
     private List<int> passAngles;
-    private int lastAngleIndex = 1;
+    //private int lastAngleIndex = 1;
     
     [SerializeField] private float oldrot;
     [SerializeField] private float oldDelta;
